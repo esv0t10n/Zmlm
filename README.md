@@ -1,8 +1,7 @@
 # Zmlm
 # Damn!!!!!!
 
-Zmlm is already to fuck off Alps \n
-none
+Zmlm is already to fuck off Alps
 
 # PULL is shit
 # COMMIT is shit
