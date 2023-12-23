@@ -1,11 +1,6 @@
 #include "stdio.h"
 #include "stdlib.h"
-
-#define true  1
-#define false 0
-
-#define X_LENTH 6
-#define Y_LENTH 3
+#include "user_math.h"
 
 int SumOfElements(int* tbl, int size) 
 {
@@ -18,11 +13,11 @@ int SumOfElements(int* tbl, int size)
 	return sum;
 }
 
-void Move_Matrix(void) 
+void MOVE_Matrix(void) 
 {
 	int matrix[X_LENTH][Y_LENTH] = { 0 };
-	unsigned int xAxisLen;
-	unsigned int yAxisLen;
+	u8 xAxisLen;
+	u8 yAxisLen;
 
 	for (int a = 0; a < X_LENTH; a++) {
 		for (int b = 0; b < Y_LENTH; b++) {
@@ -32,7 +27,7 @@ void Move_Matrix(void)
 
 	xAxisLen = sizeof(matrix) / sizeof(matrix[0]);
 	yAxisLen = sizeof(matrix[0]) / sizeof(int);
-	for (int i = 0; i < xAxisLen; i++) {
+	for (u8 i = 0; i < xAxisLen; i++) {
 		for (int j = 0; j < yAxisLen; j++) {
 			printf("[%d]  ", *(*(matrix + i) + j));
 			if ((j == yAxisLen - 1) && (i != xAxisLen - 1)) {
@@ -65,6 +60,21 @@ void OperatePointer(void)
 		}
 
 	}
+}
+
+void VOS_MemoryUsePractice(void)
+{
+	u8 i;
+	u8 length;
+	char array[] = "Hello World!";
+	printf("the size of arr is %d\n", MATH_ARRAY(array));
+	length = MATH_ARRAY(array) - 2;
+	
+	char* arr = (char*)calloc(length, sizeof(char));
+	if (arr == NULL) {
+		return;
+	}
+	free(arr);
 }
 
 void main(void) 
